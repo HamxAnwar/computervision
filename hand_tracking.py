@@ -22,6 +22,11 @@ while True:
     if track.multi_hand_landmarks:
         for landmarks in track.multi_hand_landmarks:
             mpDraw.draw_landmarks(image, landmarks, mpHands.HAND_CONNECTIONS)
+            for id, lm in enumerate(landmarks.landmark):
+                # print(id, lm) # This gives the x and y positions of landmarks but in floating point average values. We need to convert it to pixel values.
+                height, width, channels = imageRGB.shape
+                lmx, lmy = int(lm.x*width), int(lm.y*height)
+                print(id, lmx, lmy)
 
     current_time = time.time()
     fps = 1/(current_time - previous_time)
