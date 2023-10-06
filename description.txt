@@ -1,0 +1,5 @@
+I have used openCV and mediapipe from google for this project.
+I have done hand tracking in this project.
+Hand tracking makes use of two pipelines:
+    1. Palm detection to output a cropped image of hand.
+    2. Hand landmarks: Uses 21 landmarks.
